@@ -9,11 +9,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout do Código
-        uses: actions/checkout@v2
-
-      - name: Configuração do Ambiente
-        run: echo "Ambiente configurado"
-
-      - name: Execução de Testes
-        run: echo "Rodando testes..."
+      - name: Instalar o Poetry
+        run: |
+            curl -sSL https://install.python-poetry.org | python3 -
+            echo "$HOME/.local/bin" >> $GITHUB_PATH
